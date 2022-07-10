@@ -91,7 +91,6 @@ var createCmd = &cobra.Command{
 				if addAssetsFolder {
 					relativePath = "Assets/" + relativePath
 				}
-				fmt.Println(relativePath)
 				os.WriteFile(fmt.Sprintf("%s/%s/pathname", tmpFolder, guid), []byte(relativePath), os.ModePerm)
 
 				return nil
