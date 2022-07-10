@@ -14,7 +14,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "unity-packager",
 	Short: "Create a .unitypackage file without Unity",
-	Long: `Create a .unitypackage file without Unity`,
+	Long:  `Create a .unitypackage file without Unity`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -30,6 +30,6 @@ var cachedir string
 
 func init() {
 	home, _ := os.UserHomeDir()
-	rootCmd.PersistentFlags().StringVar(&cachedir, "cachedir", home+"/.unity-packager", "directory used for application cache (default is $HOME/.unity-packager)")
+	rootCmd.PersistentFlags().StringVar(&cachedir, "cachedir", home+"/.unity-packager", "directory used for application cache")
 
 }
