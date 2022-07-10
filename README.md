@@ -24,4 +24,10 @@ To include the `Assets/` folder in case our project doesn't contain it (it's req
 
 `unity-package -p MyProject/ -o mypackage --add-assets-folder`
 
+## How to generate the binary
+
+Binaries are already available under `bin/` folder, anyway there's a build available to rebuild the code:
+
+
+`./build.bash`
 
