@@ -1,0 +1,32 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: build
+  image: golang:1.18
+  commands:
+  - /bin/bash ./build.bash
+
+- name: publish binaries
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: publish_api_key
+    files: bin/*
+
+- name: publish docker image
+  image: plugins/docker
+  settings:
+    repo: ghcr.io/monkiato/unity-packager
+    registry: ghcr.io
+    tags: ${DRONE_TAG}
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+trigger:
+  ref:
+    - refs/tags/*
