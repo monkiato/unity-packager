@@ -4,6 +4,15 @@ Unity Packager is a command-line tool providing Unity packages generation withou
 
 It's a very useful tool for CI pipelines, specially for C# libraries that are not strictly designed for Unity or don't required Unity IDE for their development, and can be reused in other C# projects.
 
+## Using the Docker image
+
+Docker images are available under project packages section https://github.com/monkiato/unity-packager/pkgs/container/unity-packager
+
+```
+# From your project folder
+docker run -v $PWD/:/home/src ghcr.io/monkiato/unity-packager:1.0.0 unity-packager create -p /home/src/Assets -o my-project -i ".csproj"
+```
+
 ## How to use it
 
 Run `bin/unity-packager` for the help menu
