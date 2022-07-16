@@ -15,7 +15,9 @@ docker run -v $PWD/:/home/src ghcr.io/monkiato/unity-packager:1.0.0 unity-packag
 
 ## How to use it
 
-Run `bin/unity-packager` for the help menu
+Binaries for the different platforms and architectures can be found in the Releases section https://github.com/monkiato/unity-packager/releases/
+
+Run `unity-packager` for the help menu
 
 There are different options to customize the way we want to structure our .unitypackage file:
 
@@ -23,19 +25,19 @@ There are different options to customize the way we want to structure our .unity
 
 For instanace:
 
-`unity-package -p Assets/ -o mypackage`
+`unity-packager -p Assets/ -o mypackage`
 
-To add ignore patterns:
+To add "ignore" patterns:
 
-`unity-package -p Assets/ -o mypackage -i ".csproj"`
+`unity-packager -p Assets/ -o mypackage -i ".csproj"`
 
 To include the `Assets/` folder in case our project doesn't contain it (it's required to be part of the .unitypackage metadata to uncompress the package correctly):
 
-`unity-package -p MyProject/ -o mypackage --add-assets-folder`
+`unity-packager -p MyProject/ -o mypackage --add-assets-folder`
 
 ## How to generate the binary
 
-Binaries are already available under `bin/` folder, anyway there's a build available to rebuild the code:
+There's a build available to rebuild the code:
 
 
 `./build.bash`
