@@ -10,7 +10,7 @@ Docker images are available under project packages section https://github.com/mo
 
 ```
 # From your project folder
-docker run -v $PWD/:/home/src ghcr.io/monkiato/unity-packager:1.0.0 unity-packager create -p /home/src/Assets -o my-project -i ".csproj"
+docker run -v $PWD/:/home/src ghcr.io/monkiato/unity-packager:1.0.1 unity-packager create -p /home/src/Assets -o my-project -i ".csproj"
 ```
 
 ## How to use it
