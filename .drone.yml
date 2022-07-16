@@ -5,9 +5,9 @@ name: default
 
 steps:
 - name: build
-  image: golang:1.18
+  image: golang:1.18-alpine
   commands:
-  - /bin/bash ./build.bash
+  - /bin/bash build.bash
 
 - name: publish binaries
   image: plugins/github-release
